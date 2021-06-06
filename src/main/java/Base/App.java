@@ -31,6 +31,27 @@ Implement a mobile version of this app so it can be used at the hardware store.
  */
 public class App {
     public static void main(String[] args){
-        
+        //Scanner
+        Scanner input = new Scanner(System.in);
+
+        //inputs
+        System.out.print("What is the length of the room in feet? ");
+        String s_length = input.nextLine();
+        System.out.print("What is the width of the room in feet? ");
+        String s_width = input.nextLine();
+
+        //parse
+        int length = Integer.parseInt(s_length);
+        int width = Integer.parseInt(s_width);
+
+        //math
+        int sq_ft = length * width;
+        int paint_sq_ft = sq_ft / 350;
+        if (paint_sq_ft%350 != 0){
+            paint_sq_ft += 1;
+        }
+
+        //output
+        System.out.printf("You will need to purchase %d gallons of paint to cover %d square feet.",paint_sq_ft,sq_ft);
     }
 }
